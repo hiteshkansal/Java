@@ -19,12 +19,20 @@ public class WaitAndNotify {
 		Thread.sleep(2000);
 		
 		synchronized (this) {//used same lock
-			System.out.println("Waiting for key...");
-			scanner.nextLine();
-			System.out.println("Return key pressed");
+			/*System.out.println("Waiting for key...");
+			scanner.nextLine();*/
+			System.out.println("Consumer: Return key pressed");
 			notify();
-			//Thread.sleep(5000);
+			Thread.sleep(5000);
+			System.out.println("Consumer:1");
+			System.out.println("Consumer:2");
+			
+			
+			for(int i=0;i<10;i++){
+				System.out.print(i+" ");
+			}
 		}
+		System.out.println("Consumer:3");
 	}
 	
 }
